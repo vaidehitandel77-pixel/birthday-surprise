@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#fff2f7">
+  <meta name="description" content="A tiny birthday surprise, made just for you.">
+  <title>Happy Birthdayy Khushi! 💗</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playwrite+US+Modern:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient" aria-hidden="true"></div>
+  <div class="sky" aria-hidden="true"></div>
+  <button class="music-button" id="musicButton" type="button" aria-label="Play background music" title="Play background music">🎵</button>
+  <audio id="birthdayMusic" loop preload="none" src="assets/birthday.mp3"></audio>
+
+  <main>
+    <section class="screen welcome active" id="welcome" aria-labelledby="welcomeTitle">
+      <div class="welcome-card">
+        <div class="tiny-tag">A little something, just for you</div>
+        <div class="cake-doodle" aria-hidden="true">🎂<span>✦</span></div>
+        <h1 id="welcomeTitle">Hey Birthday Girl! <span>💗</span></h1>
+        <p>Someone left a little surprise for you...</p>
+        <button class="primary-button" id="openSurprise" type="button">Open Your Surprise <span>🎁</span></button>
+        <div class="welcome-note">made with a whole lot of love ✨</div>
+      </div>
+    </section>
+
+    <section class="screen letters-screen" id="lettersScreen" aria-labelledby="lettersTitle" hidden>
+      <header class="section-heading">
+        <div class="tiny-tag">A little birthday mail</div>
+        <h2 id="lettersTitle">Okay... there are 5 little letters<br>waiting for you <span>💌</span></h2>
+        <p>Tap them one by one... I promise they're worth opening 🥹💗</p>
+      </header>
+      <div class="progress" aria-live="polite"><span class="progress-heart">♡</span><span id="progressText">Letters opened: 0/5</span><span class="progress-track"><i id="progressBar"></i></span></div>
+      <div class="letter-grid" id="letterGrid" aria-label="Five birthday letters"></div>
+      <section class="final-card" id="finalCard" hidden aria-labelledby="finalTitle">
+        <p class="final-kicker">Every little note, opened ✨</p>
+        <h2 id="finalTitle">You opened all the letters! 🥹💗</h2>
+        <p>One last thing...</p>
+        <button class="gift-button" id="giftButton" type="button" aria-label="Open your birthday gift"><span aria-hidden="true">🎁</span><small>tap to open</small></button>
+        <div class="reveal" id="finalReveal" hidden>
+          <h3>Happy Birthday, beautiful! 🎂💗✨</h3>
+          <p>May your year be full of happiness, laughter,<br class="desktop-break"> adventures and moments worth remembering.</p>
+        </div>
+      </section>
+      <footer>Sending you the biggest birthday hug <span>♡</span></footer>
+    </section>
+  </main>
+
+  <div class="modal" id="letterModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+    <div class="modal-backdrop" data-close="true"></div>
+    <article class="message-card">
+      <button class="modal-x" type="button" aria-label="Close letter">×</button>
+      <div class="paper-sparkle" aria-hidden="true">✧　♡　✧</div>
+      <div class="modal-label" id="modalLabel">LETTER 01</div>
+      <h2 id="modalTitle">A little note for you</h2>
+      <p class="message-text" id="modalMessage"></p>
+      <div class="paper-sparkle bottom-sparkle" aria-hidden="true">♡　✧　♡</div>
+      <button class="close-button" type="button">Close 💗</button>
+    </article>
+  </div>
+  <div class="effects" id="effects" aria-hidden="true"></div>
+  <script src="script.js"></script>
+</body>
+</html>
+
